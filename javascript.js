@@ -9,11 +9,12 @@ let computerWins = [];
 let drawsArray = [];
     
 function game () {
-    i=playRound();
-    for (let i = 1; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         playRound();
-        console.log(winners);  
+        roundScore(winners[winners.length-1]);
+        
      };
+     finalScore(playerWins, computerWins)
 }
     
 
@@ -90,17 +91,34 @@ function validationCheck (answer) {
    return answer;
  };
 
- function roundScore (roundWinner) {
-    if (roundWinner == "player") {
-        console.log("player wins round")
+
+
+function finalScore (winP,winC) {
+         if (winP.lenght > winC.lenght) {
+            console.log("The final score is player " + winP.length + " and computer " + winC.length + " player wins!");
+        }
+         else if (winC.length > winP.length) {
+            console.log("The final score is computer " + winC.length + " and player " + winP.length + " computer wins!");
+        }
+         else {
+            console.log("The fianal score is computer " + winC.length + " and player " + winP.length + " It/'s a draw!");
+        }
+    
     }
-    else if (roundWinner == "computer") {
-        console.log("computer wins round")
-    }
-    else if (roundWinner == "draw") {
-            console.log("It/'s a draw!");
+
+    function roundScore (roundScore) {
+        if (roundScore == "player") {
+            console.log("player wins round")
+        }
+        else if (roundScore == "computer") {
+            console.log("computer wins round")
+        }
+        else if (roundScore == "draw") {
+                console.log("It/'s a draw!");
+            }
         }
 
- }
+
+ 
  
  game();
