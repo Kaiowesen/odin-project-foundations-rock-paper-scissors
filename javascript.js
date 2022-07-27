@@ -94,14 +94,14 @@ function validationCheck (answer) {
 
 
 function finalScore (winP,winC) {
-         if (winP.lenght > winC.lenght) {
+         if (winP.length > winC.length || winC == null) {
             console.log("The final score is player " + winP.length + " and computer " + winC.length + " player wins!");
         }
-         else if (winC.length > winP.length) {
+         else if (winC.length > winP.length || winP == null) {
             console.log("The final score is computer " + winC.length + " and player " + winP.length + " computer wins!");
         }
          else {
-            console.log("The fianal score is computer " + winC.length + " and player " + winP.length + " It/'s a draw!");
+            console.log("The final score is computer " + winC.length + " and player " + winP.length + " It\'s a draw!");
         }
     
     }
@@ -114,7 +114,7 @@ function finalScore (winP,winC) {
             console.log("computer wins round")
         }
         else if (roundScore == "draw") {
-                console.log("It/'s a draw!");
+                console.log("It\'s a draw!");
             }
         }
 
