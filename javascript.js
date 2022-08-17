@@ -8,7 +8,7 @@ let playerWins = [];
 let computerWins = [];
 let drawsArray = [];
     
-function game () {
+/*function game () {
     for (let i = 0; i < 5; i++) {
         playRound();
         roundScore(winners[winners.length-1]);
@@ -16,15 +16,17 @@ function game () {
      };
      finalScore(playerWins, computerWins)
 }
+*/
     
 
 
  //gets input from user, missing 
-function playerChoice () {
-    let input = prompt ("Let/'s play! Choose rock, paper or scissors");
-    input = validationCheck(input);
-    return input;
-}
+/*function playerChoice () {
+ if ('click' == btnP) return "paper";
+ if ('click' == btnR) return "rock"
+ if ('click' == btnS) return "scissors"
+
+}*/
 
 
 
@@ -36,7 +38,7 @@ function computerChoice () {
 
 //function to play one round and announce winner
 function playRound() {
-   const playerSelection = playerChoice();
+   const playerSelection = playerSelect;
    const computerSelection = computerChoice();
    const winner = checkResult(playerSelection, computerSelection);
    winners.push(winner)
@@ -56,34 +58,19 @@ function playRound() {
 
 //function to check who wins and prints result
 function checkResult (playerSelection,computerSelection) {
-     if (playerSelection == computerSelection) {
-        return ("draw");
-    }
-    else if  (playerSelection == "rock" && computerSelection == "scissors") {  
-        return ("player");
-    }
-    else if  (playerSelection == "rock" && computerSelection == "paper") {
-        return ("computer");
-    }
-    else if (playerSelection == "scissors" && computerSelection == "rock"){
-        return ("computer");
-    }
-    else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return ("player");
-    }
-    else if (playerSelection == "paper" && computerSelection == "rock") {
-        return ("player");
-    }
-    else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return ("computer");
-    }
-    else {
-    return ("something went wrong, please play again");
-    }
+     if (playerSelection == computerSelection) return ("draw");
+    else if  (playerSelection == "rock" && computerSelection == "scissors")  return ("player");
+    else if (playerSelection == "scissors" && computerSelection == "paper") return ("player");
+    else if (playerSelection == "paper" && computerSelection == "rock") return ("player");
+    else return ("computer");
+    
 }
 
 function validationCheck (answer) {
    let _answer = answer
+   while (answer == null) {
+    answer = prompt ("Choose rock, paper or scissors");
+   }
    answer = answer.toLowerCase();
     while (answer != "rock" && answer != "paper" && answer != "scissors")  {
        answer = prompt ("Choose rock, paper or scissors, spelling needs to be excact! Please play again!");
@@ -118,7 +105,14 @@ function finalScore (winP,winC) {
             }
         }
 
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach((button) => {
 
+            // and for each one we add a 'click' listener
+            button.addEventListener('click', () => {
+              let playerSelects = (button.id);
+              console.log(playerSelects)
+            });
+          });
  
- 
- game();
