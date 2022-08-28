@@ -27,10 +27,10 @@ function computerChoice () {
 //function to check who wins and prints result
 function checkResult (playerSelection,computerSelection) {
      if (playerSelection == computerSelection) return ("draw");
-    else if  (playerSelection == "rock" && computerSelection == "scissors")  return ("player");
-    else if (playerSelection == "scissors" && computerSelection == "paper") return ("player");
-    else if (playerSelection == "paper" && computerSelection == "rock") return ("player");
-    else return ("computer");
+    else if  (playerSelection === "rock" && computerSelection != "paper")  return ("computer");
+    else if (playerSelection === "scissors" && computerSelection != "rock") return ("computer");
+    else if (playerSelection === "paper" && computerSelection != "scissors") return ("computer");
+    else return ("player");
     
 }
 
