@@ -11,15 +11,7 @@ let playerSelect = "";
 let resultDiv = document.getElementById("divR")
 let rounDiv = document.getElementById("divC")
 let counter = 0;
-/*function game () {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        roundScore(winners[winners.length-1]);
-        
-     };
-     finalScore(playerWins, computerWins)
-}
-*/
+
     
 //gets random input from computer
 function computerChoice () {
@@ -42,18 +34,7 @@ function checkResult (playerSelection,computerSelection) {
     
 }
 
-/*function validationCheck (answer) {
-   let _answer = answer
-   while (answer == null) {
-    answer = prompt ("Choose rock, paper or scissors");
-   }
-   answer = answer.toLowerCase();
-    while (answer != "rock" && answer != "paper" && answer != "scissors")  {
-       answer = prompt ("Choose rock, paper or scissors, spelling needs to be excact! Please play again!");
-    } 
-   return answer;
- };
- */
+
 
 
 
@@ -82,17 +63,7 @@ function finalScore (winP,winC) {
         }
 }
 
-    /*function roundScore (roundScore) {
-        if (roundScore == "player") {
-            console.log("player wins round")
-        }
-        else if (roundScore == "computer") {
-            console.log("computer wins round")
-        }
-        else if (roundScore == "draw") {
-                console.log("It\'s a draw!");
-            }
-        }*/
+
 
        const buttons = document.querySelectorAll('button');
         
@@ -110,10 +81,7 @@ function finalScore (winP,winC) {
             });
         });
            
-            //playRound();
-            //finalScore(computerWins, playerWins);
-            //});
-    
+       
           
 
 //function to play one round and announce winner
